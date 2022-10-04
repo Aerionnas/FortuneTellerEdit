@@ -1,16 +1,23 @@
 import java.util.*;
 public class Fortune {
+
+    String colors[] = new String[4];
+    int numChoice1[] = {0, 1, 5, 4};
+    int numChoice2[] = {2, 3, 7, 6};
     
     public static void main(String[] args) {
         Fortune fortuneTeller = new Fortune();
         fortuneTeller.printInstructions();
-        String[] colors = fortuneTeller.stepOne();
-        fortuneTeller.printColors(colors);
-        int chosenColor = fortuneTeller.pickColor(colors);
+        fortuneTeller.stepOne();
+        fortuneTeller.printColors(fortuneTeller.colors);
+        int chosenColor = fortuneTeller.pickColor(fortuneTeller.colors);
         fortuneTeller.printNumberOptions(chosenColor);
         System.out.println("You chose the following number " + fortuneTeller.pickFirstNumber()+ ". Here's your fortune: ");
-        fortunatrial arrayObject = new fortunatrial();
-        System.out.print(arrayObject.giveFortune());
+        fortunatrial obj = new fortunatrial();
+        obj.readCsv();
+        System.out.println(obj.giveFortune());
+
+
         System.out.println("Good luck in your future");
         }
         
@@ -57,10 +64,10 @@ public class Fortune {
         Scanner scanner = new Scanner(System.in);
         System.out.printf("%nPlease enter 4 colors with spaces: ");
         String userColors = scanner.nextLine();
-        String[] color = userColors.split(" ");
-        scanner.close();
-       
-        return color;
+        colors = userColors.split(" ");
+        
+
+        return colors;
 
     }
 
@@ -74,16 +81,16 @@ public class Fortune {
     public int pickColor(String[] colors) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Pick one of your colors: ");
-        String oneColor = scanner.nextLine();
-        int length = 0;
-        for (int i = 0; i < colors.length; i++) {
-            if (oneColor.equals(colors[i])) {
-                length = oneColor.length();
-
+    
+        int length = 0;            
+            String oneColor = scanner.next();
+            for (int i = 0; i < colors.length; i++) {
+                if (oneColor.equals(colors[i])) {
+                    length = oneColor.length();
+                }
             }
-        }
-        scanner.close();
-       
+        
+        
         return length;
     }
 
@@ -110,9 +117,9 @@ public class Fortune {
      */
     public int pickFirstNumber() {
         Scanner scanner = new Scanner(System.in);
-        System.out.printf("%nThese are your number options, please choose a number: ");
+        System.out.printf("%nPlease choose a number from above: ");
         int firstNumber = scanner.nextInt();
-        scanner.close();
+        
         return firstNumber;
     }
 
