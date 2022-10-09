@@ -1,9 +1,14 @@
-Project Title: Ice Cream Truck Simulator
+Project Title: Fortune Teller(edit)
 
 Description: This program is modeled after the kid's origami fortune teller game
-where you choose a color and a number, then you are given a fortune.
+where you choose a color and a number, then you are given a fortune. I created
+this project as a final group project for my COSI11a class, but it didn't run.
+I decided to fix the errors, so the program would run. Here's the link to the
+previous repository:
 
-Languages used: Java(Object Oriented Programming)
+https://github.com/opulentj/Fortune-Teller-
+
+Languages used: Java (Using Scanner to Read Files)
 
 For this project, I used four different files: fortunatrial.java, fortune.java,
 Fortunes.csv, and TextIO.java. Please find information about each class below:
@@ -31,4 +36,6 @@ To run this project, compile the fortune.java class and run it in the
 terminal.
 
 
-credits: Aerionna Stephenson
+credits: Aerionna Stephenson, Josue Garcia, Steven Hightower, and Elon Romal.
+
+I just updated our previous work.
